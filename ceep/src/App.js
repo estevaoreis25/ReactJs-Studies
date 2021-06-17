@@ -1,18 +1,18 @@
-import React, {
-  Component
-} from 'react'
-import {
-  ListaDeNotas
-} from './components/ListaDeNotas.jsx'
-import FormularioCadastro from './components/FormularioCadastro.jsx'
+import React, {Component} from 'react'
+import './assets/App.css'
+import ListaDeNotas from './components/ListaDeNotas'
+import FormularioCadastro from './components/FormularioCadastro'
 
 class App extends Component {
+  criarNota(titulo, nota){
+    console.log(`${titulo}, ${nota}`);
+  }
   render() {
     return ( 
-      <>
-      <FormularioCadastro / >
-      <ListaDeNotas / >
-      </>
+      <section className="conteudo">
+      <FormularioCadastro criarNota = {this.criarNota}/ >
+      <ListaDeNotas/>
+      </section>
     );
   }
 }
